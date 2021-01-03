@@ -88,7 +88,8 @@ public class SDET_MobileAssignment extends Capability {
 		 * "UiSelector().text(\"Dismiss\")")).click(); driver.findElement(By.xpath(
 		 * "//android.widget.Button[@content-desc=\"Dismiss\"]/android.widget.TextView")
 		 * ).click();
-		 */		driver.findElement(MobileBy.AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
+		 */
+		driver.findElement(MobileBy.AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
 		Thread.sleep(3000);
 		driver.findElement(MobileBy.AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
 		Thread.sleep(3000);
@@ -146,56 +147,7 @@ public class SDET_MobileAssignment extends Capability {
 	@Test(priority = 2 ,enabled = true)
 	public void courseSearch() throws Exception {
 
-		/*
-		 * driver = capability(appActivity, appPackage, deviceName,
-		 * chromedriverExecutable); driver.manage().timeouts().implicitlyWait(30,
-		 * TimeUnit.SECONDS);
-		 * 
-		 * driver.findElement(MobileBy.AndroidUIAutomator(
-		 * "UiSelector().text(\"Dismiss\")")).click();
-		 * 
-		 * driver.findElement(By.xpath(
-		 * "//android.widget.Button[@content-desc=\"Dismiss\"]/android.widget.TextView")
-		 * ) .click(); driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
-		 * 
-		 * Thread.sleep(3000);
-		 * 
-		 * driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
-		 * Thread.sleep(3000);
-		 * 
-		 * driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in with Google\")")).click();
-		 * 
-		 * driver.findElement(By.id("com.google.android.gms:id/account_name")).click();
-		 */
-		/*
-		 * if (driver.findElement(MobileBy.xpath("//*[@text='Dismiss']")).isDisplayed())
-		 * {
-		 * 
-		 * // wait for covid warning to load Thread.sleep(2000);
-		 * 
-		 * // click dismiss on next warning
-		 * driver.findElement(By.xpath("//*[@text='Dismiss']")).click();
-		 * 
-		 * // wait for covid warning to load Thread.sleep(2000);
-		 * 
-		 * // click dismiss on covid warning
-		 * driver.findElement(By.xpath("//*[@text='Dismiss']")).click();
-		 * 
-		 * } else { throw new Exception("Unable to load app"); }
-		 * 
-		 * 
-		 * String Expected = "Need to add a class?"; String Actual =
-		 * driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Need to add a class?\")"))
-		 * .getText();
-		 * 
-		 * Assert.assertEquals(Actual, Expected);
-		 * System.out.println("Login sucessfully");
-		 */
-//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Select language\"))").click();
+		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Select language\"))").click();
 
 		driver.findElement(By.id("org.khanacademy.android:id/tab_bar_button_search")).click();
 
@@ -234,34 +186,8 @@ public class SDET_MobileAssignment extends Capability {
 	@Test(priority = 3 ,enabled = true)
 	public void manageTeacher() throws Exception {
 
-		/*
-		 * driver = capability(appActivity, appPackage, deviceName,
-		 * chromedriverExecutable); driver.manage().timeouts().implicitlyWait(30,
-		 * TimeUnit.SECONDS);
-		 * 
-		 * driver.findElement(MobileBy.AndroidUIAutomator(
-		 * "UiSelector().text(\"Dismiss\")")).click();
-		 * 
-		 * driver.findElement(By.xpath(
-		 * "//android.widget.Button[@content-desc=\"Dismiss\"]/android.widget.TextView")
-		 * ) .click(); driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
-		 * 
-		 * Thread.sleep(3000);
-		 * 
-		 * driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in\")")).click();
-		 * Thread.sleep(3000);
-		 * 
-		 * driver.findElement(MobileBy.
-		 * AndroidUIAutomator("UiSelector().text(\"Sign in with Google\")")).click();
-		 * 
-		 * driver.findElement(By.id("com.google.android.gms:id/account_name")).click();
-		 */
-		
-		//try {
-
-				Thread.sleep(3000);
+				
+						Thread.sleep(3000);
 
 				driver.findElement(MobileBy.AccessibilityId("Settings")).click();
 
@@ -284,20 +210,12 @@ public class SDET_MobileAssignment extends Capability {
 				driver.navigate().back();
 			}
 
-			//catch (Exception ex) {
-
-				//ex.printStackTrace();
-
-//				service.stop();
-	
+			
 	
 	@Test(priority = 4 ,enabled = true)
 	
 	public void termsOfservice() {
 		
-	
-	
-
 	try {
 
 		Thread.sleep(3000);
@@ -315,7 +233,7 @@ public class SDET_MobileAssignment extends Capability {
 		Thread.sleep(2000);
 
 		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Terms of service\"))").click();
-		// driver.switchTo().frame(0);
+		
 
 		Thread.sleep(16000);
 
@@ -323,7 +241,7 @@ public class SDET_MobileAssignment extends Capability {
 
 			Set<String> contextNames = driver.getContextHandles();
 			for (String contextName : contextNames) {
-				System.out.println(contextName); // prints out something like NATIVE_APP \n WEBVIEW_1
+				System.out.println(contextName);
 			}
 
 			try {
@@ -340,8 +258,7 @@ public class SDET_MobileAssignment extends Capability {
 
 			Thread.sleep(4000);
 
-			boolean webElementIsDisplayed = driver.findElement(By.xpath("//a[@aria-label='Khan Academy']"))
-					.isDisplayed();
+			boolean webElementIsDisplayed = driver.findElement(By.xpath("//a[@aria-label='Khan Academy']")).isDisplayed();
 
 			if (webElementIsDisplayed) {
 
@@ -356,7 +273,6 @@ public class SDET_MobileAssignment extends Capability {
 
 			System.out.println("Some Exception is there");
 
-			// driver.quit();
 		}
 
 		Thread.sleep(2000);
